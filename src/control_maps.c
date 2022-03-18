@@ -6,7 +6,7 @@
 /*   By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:26:28 by fkaratay          #+#    #+#             */
-/*   Updated: 2022/02/25 16:26:25 by fkaratay         ###   ########.fr       */
+/*   Updated: 2022/03/04 13:00:50 by fkaratay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	control_len(t_mlx *mlx, char *str)
 	while (str[i])
 		i++;
 	if (i != row_len)
-		exit_app(mlx, "Satir uzunluklari farkli..");
+		exit_app(mlx, "Satir uzunluklari farkli..", 1);
 }
 
 void	control_end_line(t_mlx *mlx, char *str)
@@ -36,7 +36,7 @@ void	control_end_line(t_mlx *mlx, char *str)
 	while (str[i])
 	{
 		if (str[i] != '1')
-			exit_app(mlx, "Son satirda duvar eksik..");
+			exit_app(mlx, "Son satirda duvar eksik..", 1);
 		i++;
 	}
 }
@@ -66,14 +66,14 @@ void	count_elements(t_mlx *mlx)
 		}
 		i++;
 	}
-	if (mlx->p_count < 1 || mlx->e_count < 1 || mlx->c_count < 1)
-		exit_app(mlx, "Yeterli sayıda eleman yok..");
+	if (mlx->p_count != 1 || mlx->e_count < 1 || mlx->c_count < 1)
+		exit_app(mlx, "Yeterli sayıda eleman yok..", 1);
 }
 
 void	control_elements(t_mlx *mlx, char c)
 {
 	if (!('P' == c || 'C' == c || '1' == c || '0' == c || 'E' == c))
-		exit_app(mlx, "Yasak elementler var..");
+		exit_app(mlx, "Yasak elementler var..", 1);
 }
 
 void	control_maps(t_mlx *mlx)
@@ -88,14 +88,14 @@ void	control_maps(t_mlx *mlx)
 		while (mlx->map[i][j])
 		{
 			if (i == 0 && mlx->map[0][j] != '1')
-				exit_app(mlx, "1. satirda duvar eksik..");
+				exit_app(mlx, "1. satirda duvar eksik..", 1);
 			control_elements(mlx, mlx->map[i][j]);
 			j++;
 		}
 		if (mlx->map[i][0] != '1')
-			exit_app(mlx, "Sol satirlarda duvar eksik..");
+			exit_app(mlx, "Sol satirlarda duvar eksik..", 1);
 		if (mlx->map[i][j - 1] != '1')
-			exit_app(mlx, "Sag satirlarda duvar eksik..");
+			exit_app(mlx, "Sag satirlarda duvar eksik..", 1);
 		control_len(mlx, mlx->map[i]);
 		i++;
 	}

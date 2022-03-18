@@ -6,7 +6,7 @@
 #    By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:55:10 by fkaratay          #+#    #+#              #
-#    Updated: 2022/02/25 17:57:18 by fkaratay         ###   ########.fr        #
+#    Updated: 2022/03/05 18:12:44 by fkaratay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,12 @@ $(NAME):	$(OBJS)
 			mv ./mlx/libmlx.a ./libmlx.a
 			$(CC) $(CFLAGS) $(SRCS) -framework OpenGL -framework AppKit libmlx.a -o $(NAME)
 
+all: 		$(NAME)
 
 bonus:		$(OBJS_BONUS)
 			make -C ./mlx
 			mv ./mlx/libmlx.a ./libmlx.a
 			$(CC) $(CFLAGS) $(SRCS_BONUS) -framework OpenGL -framework AppKit libmlx.a -o $(NAME)
-
-all: 		$(NAME)
 
 clean:
 			make -C ./mlx clean

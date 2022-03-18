@@ -6,7 +6,7 @@
 /*   By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 11:24:31 by fkaratay          #+#    #+#             */
-/*   Updated: 2022/02/25 17:58:32 by fkaratay         ###   ########.fr       */
+/*   Updated: 2022/03/04 14:40:36 by fkaratay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	key_event(int key, t_mlx *mlx)
 	if (key == ESC_KEY)
 	{
 		ft_printf("Cikis Yaptiniz..\n");
-		exit_app(mlx, NULL);
+		exit_app(mlx, NULL, 0);
 	}
 	else if (key == W_KEY)
 		move_character_up(mlx);
@@ -48,7 +48,7 @@ void	app_defines(t_mlx *mlx)
 	mlx->current_x = 0;
 	mlx->current_y = 0;
 	mlx->score = 0;
-	mlx->char_move = 0;
+	mlx->char_move = -1;
 	mlx->row_len = 0;
 	mlx->column_len = 0;
 	mlx->c_count = 0;

@@ -6,7 +6,7 @@
 /*   By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:33:18 by fkaratay          #+#    #+#             */
-/*   Updated: 2022/03/01 11:01:53 by fkaratay         ###   ########.fr       */
+/*   Updated: 2022/03/04 12:58:47 by fkaratay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	character_direction(t_mlx *mlx, int curr_x, int curr_y)
 {
-	mlx->char_move++;
 	if (mlx->map[curr_x][curr_y] == 'E' && mlx->score == mlx->c_count)
 	{
 		ft_printf("Oyun Bitti..\nSkorunuz: %d\n", mlx->score);
-		exit_app(mlx, NULL);
+		exit_app(mlx, NULL, 0);
 	}
 	else if (mlx->map[curr_x][curr_y] != '1' && mlx->map[curr_x][curr_y] != 'E')
 	{

@@ -6,7 +6,7 @@
 /*   By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 10:38:17 by fkaratay          #+#    #+#             */
-/*   Updated: 2022/02/25 17:32:27 by fkaratay         ###   ########.fr       */
+/*   Updated: 2022/03/04 12:52:12 by fkaratay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	render_character(t_mlx *mlx, int x, int y)
 {
+	mlx->char_move++;
 	if (mlx->curr_pos == 'R')
 		mlx_put_image_to_window(mlx->mlx, mlx->windows, \
 		mlx->create_char_right, x, y);

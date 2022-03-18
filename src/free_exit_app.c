@@ -6,7 +6,7 @@
 /*   By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:05:52 by fkaratay          #+#    #+#             */
-/*   Updated: 2022/03/01 11:17:08 by fkaratay         ###   ########.fr       */
+/*   Updated: 2022/03/04 14:46:31 by fkaratay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_map(char **map)
 	free(map);
 }
 
-int	exit_app(t_mlx *mlx, char *str)
+int	exit_app(t_mlx *mlx, char *str, int exit_mode)
 {
 	if (str)
 		ft_printf("ERROR\n%s", str);
@@ -44,5 +44,5 @@ int	exit_app(t_mlx *mlx, char *str)
 		free_map(mlx->map);
 	if (mlx)
 		free(mlx);
-	exit(1);
+	exit(exit_mode);
 }

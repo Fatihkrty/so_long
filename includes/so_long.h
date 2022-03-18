@@ -6,7 +6,7 @@
 /*   By: fkaratay <fkaratay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:19:26 by fkaratay          #+#    #+#             */
-/*   Updated: 2022/02/25 16:33:00 by fkaratay         ###   ########.fr       */
+/*   Updated: 2022/03/04 12:57:05 by fkaratay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	move_character_left(t_mlx *mlx);
 void	control_maps(t_mlx *mlx);
 void	render_map(t_mlx *mlx);
 void	ft_printf(const char *str, ...);
-int		exit_app(t_mlx *mlx, char *str);
+int		exit_app(t_mlx *mlx, char *str, int exit_mode);
 void	configure_settings(t_mlx *mlx);
 char	*ft_itoa(int n);
 void	create_img(t_mlx *mlx);
